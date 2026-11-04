@@ -1,0 +1,255 @@
+{
+  "schema": "openarmx_sim_demo_source_release_v1",
+  "title": "OpenArmX Sim",
+  "scope": "CTX01 source demo only; not all-task production or training acceptance",
+  "controller": "scripted oracle expert; not a learned policy",
+  "simulation_execution_claimed": false,
+  "adaptations": "Runtime paths and experience discovery only. Motion/contact/clock thresholds unchanged.",
+  "files": [
+    {
+      "file": "expert/context_asset_scale.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_asset_scale.py",
+      "source_sha256": "40c3688e869e9571e73d40bfd82d4a90a5374a293cab1754adf1a6087cfcc667",
+      "release_sha256": "40c3688e869e9571e73d40bfd82d4a90a5374a293cab1754adf1a6087cfcc667",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_bowl_exit.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_bowl_exit.py",
+      "source_sha256": "56ba75f90657e952a9b55bccb2c5319bf1c80439989a4dc32789205e92ff732d",
+      "release_sha256": "56ba75f90657e952a9b55bccb2c5319bf1c80439989a4dc32789205e92ff732d",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_camera_rig.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_camera_rig.py",
+      "source_sha256": "1a9197a65a5bdacc8a1f563162261dad2ff6402c14204733c9305adf6274bb8a",
+      "release_sha256": "1a9197a65a5bdacc8a1f563162261dad2ff6402c14204733c9305adf6274bb8a",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_camera_warmup.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_camera_warmup.py",
+      "source_sha256": "075121739e53fb7c0f8269463969fa2feb5367d170594be6dc2d94baa6a07fd0",
+      "release_sha256": "075121739e53fb7c0f8269463969fa2feb5367d170594be6dc2d94baa6a07fd0",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_contact_contract.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_contact_contract.py",
+      "source_sha256": "d915ae1d083addb81a25befad3bdc6b32ce1a337e88f0aed0118b30502bde1f3",
+      "release_sha256": "d915ae1d083addb81a25befad3bdc6b32ce1a337e88f0aed0118b30502bde1f3",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_container_geometry.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_container_geometry.py",
+      "source_sha256": "32a6b82256a2ca7a55200a185a26f3752aadd42fc67d4865f5d994ac5487af4f",
+      "release_sha256": "32a6b82256a2ca7a55200a185a26f3752aadd42fc67d4865f5d994ac5487af4f",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_episode_sampling.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_episode_sampling.py",
+      "source_sha256": "a71794e5e8f1fcad11c580ccef9ba478473b6db2d87bae0c71d77949be0fda8d",
+      "release_sha256": "a71794e5e8f1fcad11c580ccef9ba478473b6db2d87bae0c71d77949be0fda8d",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_grasp_geometry.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_grasp_geometry.py",
+      "source_sha256": "f7236d930e64e19177c003b0fd1563b2189bc259987b9afc5d31fc9426d87225",
+      "release_sha256": "f7236d930e64e19177c003b0fd1563b2189bc259987b9afc5d31fc9426d87225",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_headless_viewport.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_headless_viewport.py",
+      "source_sha256": "2478a673f9dc304aa4c03e2034bef621c538bf18186e587fa4fba9063621f160",
+      "release_sha256": "2478a673f9dc304aa4c03e2034bef621c538bf18186e587fa4fba9063621f160",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_instructions.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_instructions.py",
+      "source_sha256": "77e0191fb805cab79be7567a200208bc5e966736a6d311c9a2792302650b7e4c",
+      "release_sha256": "77e0191fb805cab79be7567a200208bc5e966736a6d311c9a2792302650b7e4c",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_joint_motion.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_joint_motion.py",
+      "source_sha256": "8aeb21433f7c59b105c385d2f38dfd54fa1562805319c3e147137d987dd1f11b",
+      "release_sha256": "8aeb21433f7c59b105c385d2f38dfd54fa1562805319c3e147137d987dd1f11b",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_live_view.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_live_view.py",
+      "source_sha256": "816aa1d336a481963d315ce8b61757934d5f82d19b702bc68271cb47abc432bf",
+      "release_sha256": "816aa1d336a481963d315ce8b61757934d5f82d19b702bc68271cb47abc432bf",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_motion_planning.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_motion_planning.py",
+      "source_sha256": "fd7a2cd49fe82414212ebfab05ff8a70d7a8294057ce63412d672dda4195e8e7",
+      "release_sha256": "fd7a2cd49fe82414212ebfab05ff8a70d7a8294057ce63412d672dda4195e8e7",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_physics_clock.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_physics_clock.py",
+      "source_sha256": "23e4735c59ae28dafe9d5186fe4a2b1ad5043bc2c8bfb2a60e070b3b4533617c",
+      "release_sha256": "23e4735c59ae28dafe9d5186fe4a2b1ad5043bc2c8bfb2a60e070b3b4533617c",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_push_geometry.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_push_geometry.py",
+      "source_sha256": "a784587667801ea3e65cfed73a1599d32526b8a0a720ef167f82604e23407124",
+      "release_sha256": "a784587667801ea3e65cfed73a1599d32526b8a0a720ef167f82604e23407124",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_recording_adapter.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_recording_adapter.py",
+      "source_sha256": "1078a938bbdc80e6c73a8769ce321d4518c9e49edcbe9201f274988ef02a81b7",
+      "release_sha256": "1078a938bbdc80e6c73a8769ce321d4518c9e49edcbe9201f274988ef02a81b7",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_reference_start.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_reference_start.py",
+      "source_sha256": "21a38f821ed0e26428109ea8359ab237973d37e5df9e012318b3ebf58fa7a564",
+      "release_sha256": "21a38f821ed0e26428109ea8359ab237973d37e5df9e012318b3ebf58fa7a564",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_render_barrier.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_render_barrier.py",
+      "source_sha256": "c2874d10fff250a247223a0531d8f130531056c357a51fd5ff9b4ded70949b2a",
+      "release_sha256": "c2874d10fff250a247223a0531d8f130531056c357a51fd5ff9b4ded70949b2a",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_render_sync.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_render_sync.py",
+      "source_sha256": "81c5a76d5897d6eda693a0a72961f29870e79e80149d52e298a23c22c4ed5d43",
+      "release_sha256": "81c5a76d5897d6eda693a0a72961f29870e79e80149d52e298a23c22c4ed5d43",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_scene_appearance.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_scene_appearance.py",
+      "source_sha256": "f6b9fb169e20f0a8cecf4aaca5f2b445f614242695618e0a0e308d41de69d6cd",
+      "release_sha256": "f6b9fb169e20f0a8cecf4aaca5f2b445f614242695618e0a0e308d41de69d6cd",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_scene_markers.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_scene_markers.py",
+      "source_sha256": "9344b1e0c2420a6fa6c6739437a649987fb50fd2cda9c7a62b63ea7a3ccdf476",
+      "release_sha256": "9344b1e0c2420a6fa6c6739437a649987fb50fd2cda9c7a62b63ea7a3ccdf476",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_scene_reference.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_scene_reference.py",
+      "source_sha256": "19e5c14fac507820b99562a1245d484ac7bc2e780d86129a5e9c71df49520fcd",
+      "release_sha256": "c141cf35bd888a19ad4992d8bb93dde1638d97be8f15d33351a81b1776936162",
+      "path_portability_adaptation": true
+    },
+    {
+      "file": "expert/context_stable_block_return.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_stable_block_return.py",
+      "source_sha256": "290bdb0f9662f776890592fce23496a7de3232803bbf958752a1515f9858afbd",
+      "release_sha256": "290bdb0f9662f776890592fce23496a7de3232803bbf958752a1515f9858afbd",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_suite_runtime.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_suite_runtime.py",
+      "source_sha256": "71ebe4f0d4b2477dfc12bddd86406be5c5ef30499d10d66e5dae9b37c21eafee",
+      "release_sha256": "71ebe4f0d4b2477dfc12bddd86406be5c5ef30499d10d66e5dae9b37c21eafee",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_suite_scene.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_suite_scene.py",
+      "source_sha256": "d29cdbf0f28eeee44377a690101574baa9923c415ff1d70bacb7e80c94be4f2e",
+      "release_sha256": "4c3a4fc7816002f88a0b5c40e3cdbc164d57151250ea94389f3a6a33f556fd6e",
+      "path_portability_adaptation": true
+    },
+    {
+      "file": "expert/context_table_block_yaw.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_table_block_yaw.py",
+      "source_sha256": "80c963592405938a3b68f0b516bebd857d59da05c47298414170c4aaa2526bc2",
+      "release_sha256": "80c963592405938a3b68f0b516bebd857d59da05c47298414170c4aaa2526bc2",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_task_protocols.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_task_protocols.py",
+      "source_sha256": "3491b0c389d9dc41d14cd926cc5f0a613c4c6fdaa0e535e9f2a1f9a106319f8f",
+      "release_sha256": "d671d652246b8dc9f5521c303f9fb43c5e8b7677ed69dda5519f8e1d545761ba",
+      "path_portability_adaptation": true
+    },
+    {
+      "file": "expert/context_video_recorder.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_video_recorder.py",
+      "source_sha256": "90778c2de13f790f2ec652e2a3c22ff44a312510be184cd77a702e81935d7507",
+      "release_sha256": "90778c2de13f790f2ec652e2a3c22ff44a312510be184cd77a702e81935d7507",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/context_video_source.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/context_video_source.py",
+      "source_sha256": "2d662501f51d15af330cb6e8ff4e12e9a205a2da1fc77b62f2d173ee2b61a881",
+      "release_sha256": "2d662501f51d15af330cb6e8ff4e12e9a205a2da1fc77b62f2d173ee2b61a881",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/inspect_context_start_pose.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/inspect_context_start_pose.py",
+      "source_sha256": "4900aae6d81c6d7819c026f53d840f31acc4a7342a75ff64e2175893db783e64",
+      "release_sha256": "a554f356d3df89e93f773c806b9bf1f017bccbfe489ef5a395aa3c52acf0f791",
+      "path_portability_adaptation": true
+    },
+    {
+      "file": "expert/kinematics.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/kinematics.py",
+      "source_sha256": "8fdaa12255836b8330b26c6b110824f2f6db61885dc838f2384510c8186145d9",
+      "release_sha256": "8fdaa12255836b8330b26c6b110824f2f6db61885dc838f2384510c8186145d9",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "expert/run_context_collection.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/run_context_collection.py",
+      "source_sha256": "8fad38fce1858d7b7379f44f9ddbf52cbedc490700240f9cb56ffce289036449",
+      "release_sha256": "f0efe575e90123e9d6cca88119d3a6ebeeed0c539053e2fdd5741a21c654e148",
+      "path_portability_adaptation": true
+    },
+    {
+      "file": "configs/context_camera_rig_pilot.json",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/configs/context_camera_rig_pilot.json",
+      "source_sha256": "403f18334b3d0f05b6a93d3654d3ec0670c50a97f6e5bf7cc97a6a4ed1d23d53",
+      "release_sha256": "403f18334b3d0f05b6a93d3654d3ec0670c50a97f6e5bf7cc97a6a4ed1d23d53",
+      "path_portability_adaptation": false
+    },
+    {
+      "file": "tests/test_context_motion_planning.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/test_context_motion_planning.py",
+      "source_sha256": "a240796d04bea383f85dba3de3e0a884fc79ead1c629cedfddd83e8357511202",
+      "release_sha256": "6f1f36ff652d7b856d92eed45744cd2f9fe14a8be4d38d35803bc71dce8cd5e6",
+      "path_portability_adaptation": true
+    },
+    {
+      "file": "tests/test_context_joint_motion.py",
+      "source_id": "context_v07_r10_ctx01_retime12_v1/scripts/test_context_joint_motion.py",
+      "source_sha256": "7d965df4ef8de5d467c338763e2e3138de2e03c7d215aeb874a6a51b82f055ff",
+      "release_sha256": "bed7326a5598ec06811a1633b2b89d3eb2608e6c1070114620b24b00a3dde668",
+      "path_portability_adaptation": true
+    }
+  ]
+}
