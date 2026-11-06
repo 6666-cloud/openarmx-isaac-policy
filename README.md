@@ -1,44 +1,50 @@
 # OpenArmX Sim
 
-## 双臂仿真资产搭建与脚本控制策略 Demo
+双臂仿真资产搭建、脚本控制策略与 LeRobot 导出 Demo。
 
-**Native scene assets and contact-driven scripted control for bimanual manipulation**
+## v0.2.0：补齐 LeRobot 导出
 
-首个源码示例包已上传：[下载源码 v0.1.0](openarmx-sim-demo-source-v0.1.0.zip)。本次以冻结 ZIP 交付完整目录，下载解压后查看 `openarmx-sim-demo/README.md`；源码没有散放在仓库根目录。
+旧 v0.1.0 只有原始 HDF5、三相机 MP4 与英语事件时间线，未提供 LeRobot 导出入口。本次补齐独立 CPU 导出器，以及采集结束后自动导出的可选入口。
 
-## 包含什么
-
-- **资产搭建**：原生 USD 机器人、桌面、积木与盘子的组合代码，以及本地资产准备器、几何/物理属性指纹与依赖检查。
-- **控制 policy**：脚本专家状态机、USD 关节链 FK/IK、有界运动规划、关节 PD 驱动和接触/释放检查。不是训练好的 VLA/RL 模型。
-- **一个 demo**：CTX01 操作历史选择。先抓起一块积木、保持并放回，再把之前没有操作的另一块放到中央盘中；提供 A/B 分支。
-- **使用说明**：环境、资产、控制接口、运行命令、许可和验证边界。
-- **来源清单**：每个冻结源码和适配文件的 SHA256，见压缩包及仓库中的 `SOURCE_MANIFEST.json`。
-
-## 先看无需 GPU 的示例
+[下载完整源码 v0.2.0](openarmx-sim-demo-source-v0.2.0.zip)。沿用 v0.1.0 的冻结源码 ZIP 交付方式：**先解压，再运行包内脚本**；源码没有散放在 GitHub 仓库根目录。
 
 ```bash
-unzip openarmx-sim-demo-source-v0.1.0.zip
+unzip openarmx-sim-demo-source-v0.2.0.zip
 cd openarmx-sim-demo
+```
+
+解压后查看 `docs/LEROBOT.md`，在独立 Python 3.10 CPU 环境安装 `requirements-export.txt`；不要装进 Isaac Sim 环境。
+
+```bash
+EXPORT_PY=/path/on/data-volume/export-env/bin/python
+RAW=/path/on/data-volume/demo-A-001
+OUT=/path/on/data-volume/lerobot/demo-A-001
+
+# 转换已经成功结束、完整封盘的 CTX01 三相机原生录制。
+"$EXPORT_PY" -B scripts/export_lerobot.py \
+  --source "$RAW" --output "$OUT" --repo-id example/openarmx-ctx01-demo
+```
+
+也可用包内 `scripts/demo.py --lerobot-output ... --lerobot-python ... --repo-id ...`，在采集子进程成功退出后独立导出；具体资产、cache、输出和环境参数见完整指南。
+
+- 使用官方 `lerobot==0.3.3`，输出标准 **LeRobot Dataset v2.1**；不是 v3，也不是私有修改版运行时。
+- 三相机原生 30 Hz / 640×480 MP4 同字节复制，不暂存 PNG、不二次编码。
+- 按关节名映射 16 维 state/action，保留 rad/m 单位、原始监督 mask 与完整尾段。
+- 每帧 `task` 包含公共协议及截至该帧已经到达的完整英语历史，原始逐帧标注另存；不提前泄露未来指令。
+- 导出后使用官方 CPU reader 实际回读，只有通过才写 `FORMAT_READY.json`；格式通过不等于正式训练准入，不自动上传或训练。
+
+## 资产与控制示例
+
+源码包含原生 USD 资产准备与指纹检查、场景组合、关节链 FK/IK、有界运动规划、PD 驱动以及接触/释放检查。本示例只开放 **CTX01 A/B 操作历史选择任务**，控制器是脚本专家，不是训练好的 VLA/RL 模型。
+
+```bash
+# 只查看任务计划，不启动仿真。
 python -B scripts/demo.py --plan-only --variant A
 python -B scripts/demo.py --plan-only --variant B
 ```
 
-此命令只打印英语指令、任务计划和期望结果，不启动仿真、不生成训练数据。
+完整物理运行需要兼容的 Isaac Sim 4.5 / Python 3.10 环境及合法持有的原生资产，见 ZIP 内 `README.md` 和 `docs/ASSETS.md`。仿真采集与导出分别使用独立环境。此更新未修改冻结物理采集代码或验收阈值；不宣称重新运行过 GPU/PhysX。
 
-完整物理运行需要兼容的 **Isaac Sim 4.5 / Python 3.10** 环境和合法持有的原生资产；步骤在解压后的 README 与 `docs/ASSETS.md`。第三方 USD/mesh/纹理不在这个源码 ZIP 中。仅克隆本仓库不能直接获得完整资产或运行物理仿真。
+[历史源码 v0.1.0](openarmx-sim-demo-source-v0.1.0.zip) 保留不变，`SOURCE_MANIFEST.json` 对应 v0.2.0 ZIP 内的源码清单与 SHA256。没有上传真实采集数据、数据派生校验明细、录像、USD/mesh/纹理、模型权重、密钥或真实机器人项目。
 
-## 验证与范围
-
-- 46 个源码/说明/配置文件，未压缩共 607,293 bytes。
-- **36 项 CPU 回归测试通过**；本次没有重跑 GPU/PhysX 完整 episode。
-- 本地原生资产准备和尺寸/SHA 校验已完成，几何、变换与物理属性指纹保持一致；这不是接触物理成功认证。
-- 不包含数据集、录像、模型权重、密钥、服务器地址或真实机器人项目。
-- 此版从 `context_v07_r10_ctx01_retime12_v1` 提取，仅开放 CTX01 demo，不是全任务生产系统或正式训练验收包。
-
-源码 ZIP SHA256：
-
-```text
-fa316340c228cee845cca2600f192d0db67bdd56508d94a07396a1ddc2eed882
-```
-
-代码、资产和数据许可分开处理，本初稿未新增统一开源许可证。第三方资产遵循各自原始许可，不能因源码发布而视为获得模型/纹理再分发或商用授权。
+本初稿未新增统一开源许可证。代码、第三方资产、数据和模型许可分开处理，源码发布不授予第三方资产再分发或商用授权。
